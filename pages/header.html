@@ -1,1 +1,85 @@
-<p>Header</p>
+<nav class="nav container">
+  <div class="nav__data">
+    <a href="#" class="nav__logo">
+      <i class='bx bxl-firebase'></i> sstm.
+    </a>
+
+    <div class="nav__toggle" id="nav-toggle">
+      <i class='bx bx-menu nav__burger'></i>
+      <i class='bx bx-x nav__close'></i>
+    </div>
+  </div>
+
+  <div class="nav__menu" id="nav-menu">
+    <ul class="nav__list">
+      <li><a href="#" class="nav__link">Dashboard</a></li>
+
+      <li><a href="#" class="nav__link">Clientes</a></li>
+
+      <li><a href="#" class="nav__link">Estoque</a></li>
+
+      <li class="dropdown__item">
+        <div class="nav__link">
+          Contas <i class='bx bx-chevron-down dropdown__arrow'></i>
+        </div>
+
+        <ul class="dropdown__menu">
+          <li>
+            <a href="#" class="dropdown__link">
+              <i class='bx bx-minus'></i></i> A pagar
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="dropdown__link">
+              <i class='bx bx-minus'></i></i> A receber
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="dropdown__link">
+              <i class='bx bx-minus'></i></i> Fluxo de Caixa
+            </a>
+          </li>
+
+          <!--=============== DROPDOWN SUBMENU ===============-->
+          <li class="dropdown__subitem">
+            <div class="dropdown__link">
+              <i class='bx bx-minus'></i> Relatórios <i class='bx bx-plus dropdown__add'></i>
+            </div>
+
+            <ul class="dropdown__submenu">
+              <li>
+                <a href="#" class="dropdown__sublink">
+                  </i> Por período
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="dropdown__sublink">
+                  </i> Consolidados
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="dropdown__sublink">
+                  </i> PDF
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="nav__link">OS</a></li>
+
+      <li class="dropdown__item">
+        <div class="nav__link">
+          Configurações
+        </div>
+      </li>
+
+      <li><a href="#" class="nav__link">Suporte</a></li>
+    </ul>
+  </div>
+</nav>
