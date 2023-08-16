@@ -1,20 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 @import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
 
-:root{
+:root {
     --first-color: #26DFBF;
     --first-color-dark: #37474F;
     --first-color-light: #A49EAC;
     --first-color-lighten: #F2F2F2;
 
     --body-font: 'Open Sans', sans-serif;
-    
+
     --h1-font-size: 1.5rem;
     --normal-font-size: .938rem;
     --small-font-size: .813rem;
 
-    @media screen and (min-width: 768px){
+    --header-height: 3.5rem;
+
+    @media screen and (min-width: 768px) {
         --normal-font-size: 1rem;
         --small-font-size: .875rem;
     }
+
+    @media screen and (min-width: 1024px) {
+        --normal-font-size: 1rem;
+    }
+
+    --font-regular: 400;
+    --font-semi-bold: 600;
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
 }
