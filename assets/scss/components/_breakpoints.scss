@@ -1,0 +1,49 @@
+@media screen and (min-width: 576px) {
+    .login {
+        &__forms {
+            width: 348px;
+            justify-self: center;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .login {
+        height: 100vh;
+        overflow: hidden;
+
+        &__content {
+            grid-template-columns: repeat(2, max-content);
+            justify-content: center;
+            align-items: center;
+            margin-left: 10rem;
+        }
+
+        &__img {
+            display: flex;
+            width: 600px;
+            height: 588px;
+            background-color: var(--first-color-lighten);
+            border-radius: 1rem;
+            padding-left: 1rem;
+
+            & img {
+                width: 390px;
+                margin-top: 0;
+            }
+        }
+
+        &__registre,
+        &__create {
+            left: -11rem;
+        }
+
+        &__registre {
+            bottom: -2rem;
+        }
+
+        &__create {
+            bottom: -5.5rem;
+        }
+    }
+}
