@@ -27,6 +27,105 @@
   }
 }
 
+.is-container-fluid {
+  width: 100%;
+}
+
+.is-container-xxl {
+  min-width: 1201px;
+}
+
+.is-container-xl {
+  min-width: 1025px;
+  max-width: 1200px;
+}
+
+.is-container-lg {
+  min-width: 769px;
+  max-width: 1024px;
+}
+
+.is-container-md {
+  min-width: 481px;
+  max-width: 768px;
+}
+
+.is-container-xs {
+  min-width: 320px;
+  max-width: 480px;
+}
+
+.is-container-xxs {
+  min-width: 280px;
+  max-width: 319px;
+}
+
+.is-container-xxs, .is-container-xs, .is-container-md, .is-container-lg, .is-container-xl, .is-container-xxl {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.is-container-xxs, .is-container-xs, .is-container-md, .is-container-lg, .is-container-xl, .is-container-xxl, .row {
+  padding: 0 5px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.is-col-12 {
+  width: 100%;
+}
+
+.is-col-11 {
+  width: 91.6666666667%;
+}
+
+.is-col-10 {
+  width: 83.3333333333%;
+}
+
+.is-col-9 {
+  width: 75%;
+}
+
+.is-col-8 {
+  width: 66.6666666667%;
+}
+
+.is-col-7 {
+  width: 58.3333333333%;
+}
+
+.is-col-6 {
+  width: 50%;
+}
+
+.is-col-5 {
+  width: 41.6666666667%;
+}
+
+.is-col-4 {
+  width: 33.3333333333%;
+}
+
+.is-col-3 {
+  width: 25%;
+}
+
+.is-col-2 {
+  width: 16.6666666667%;
+}
+
+.is-col-1 {
+  width: 8.3333333333%;
+}
+
+.is-col1, .is-col-2, .is-col-3, .is-col-4, .is-col-5, .is-col-6, .is-col-7, .is-col-8, .is-col-9, .is-col-10, .is-col-11, .is-col-12 {
+  padding: 2px;
+}
+
 *, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
@@ -57,9 +156,53 @@ ul {
   list-style: none;
 }
 
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
+.card {
+  margin: 20px 0;
+}
+.card__title {
+  margin: 0 5px;
+  font-weight: 600;
+  background-color: var(--first-color-lighten);
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+
+.form-control {
+  margin: 10px 0;
+  padding: 0 5px;
+}
+
+label {
+  width: 100%;
+}
+
+input[type=text], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--first-color-light);
+  font-size: 1.1rem;
+}
+
+input[type=submit], input[type=button] {
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--first-color-light);
+  font-size: 1rem;
+}
+
+.is-btn-primary {
+  border: none;
+  background-color: var(--first-color-dark);
+  color: var(--first-color-lighten);
+}
+
+.is-flex-center-center {
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -442,5 +585,3 @@ ul {
     bottom: -5.5rem;
   }
 }
-
-/*# sourceMappingURL=styles.css.map */
