@@ -4,37 +4,36 @@
 
 .is-container-xxl {
   min-width: 1201px;
-  width: 100%;
 }
 
 .is-container-xl {
   min-width: 1025px;
   max-width: 1200px;
-  width: 100%;
 }
 
 .is-container-lg {
   min-width: 769px;
   max-width: 1024px;
-  width: 100%;
 }
 
 .is-container-md {
   min-width: 481px;
   max-width: 768px;
-  width: 100%;
 }
 
 .is-container-xs {
   min-width: 320px;
   max-width: 480px;
-  width: 100%;
 }
 
 .is-container-xxs {
   min-width: 280px;
   max-width: 319px;
+}
+
+.is-container-xxs, .is-container-xs, .is-container-md, .is-container-lg, .is-container-xl, .is-container-xxl {
   width: 100%;
+  margin: 0 auto;
 }
 
 .is-container-xxs, .is-container-xs, .is-container-md, .is-container-lg, .is-container-xl, .is-container-xxl, .row {
