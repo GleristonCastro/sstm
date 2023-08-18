@@ -27,3 +27,53 @@ img{
 ul{
 	list-style: none;
 }
+
+.card {
+  margin: 20px 0;
+
+  &__title {
+    margin: 0 5px;
+    font-weight: 600;
+    background-color: var(--first-color-lighten);
+    padding: 10px 5px;
+    border-radius: 5px;
+  }
+}
+
+.form-control {
+  margin: 10px 0;
+  padding: 0 5px;
+}
+
+label {
+  width: 100%;
+}
+
+input[type='text'], input[type='email'], input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--first-color-light);
+  font-size: 1.1rem;
+}
+
+input[type='submit'], input[type='button']{
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--first-color-light);
+  font-size: 1rem;
+}
+
+.is-btn-primary {
+  border: none;
+  background-color: var(--first-color-dark);
+  color: var(--first-color-lighten);
+}
+
+.is-flex-center-center {
+  justify-content: center;
+  align-items: center;
+}
