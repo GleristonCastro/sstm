@@ -205,6 +205,10 @@ input[type=submit], input[type=button] {
   align-items: center;
 }
 
+.mt150 {
+  margin-top: 150px;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -585,3 +589,5 @@ input[type=submit], input[type=button] {
     bottom: -5.5rem;
   }
 }
+
+/*# sourceMappingURL=styles.css.map */
