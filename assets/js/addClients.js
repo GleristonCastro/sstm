@@ -49,6 +49,13 @@ btnSubmitForm.addEventListener('click', () => {
   console.table(data);
 });
 
+birthday.addEventListener('keyup', (event) => {
+  let valueKeyup = event.target.value.replace(/\D/g,"");
+  valueKeyup = valueKeyup.replace(/(\d{2})(\d)/,"$1/$2") 
+  valueKeyup = valueKeyup.replace(/(\d{2})(\d)/,"$1/$2") 
+  event.target.value = valueKeyup;
+})
+
 zipCode.addEventListener('input', () => {
   if(zipCode.value.length === 8){
     const apiViaCep = `https://viacep.com.br/ws/${zipCode.value}/json/`
