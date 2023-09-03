@@ -82,3 +82,17 @@ cpf.addEventListener('keyup', (event) => {
   valueKeyup = valueKeyup.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
   event.target.value = valueKeyup;
 });
+
+phoneNumber.addEventListener('keyup', (event) => {
+  let valueKeyup = event.target.value.replace(/\D/g,"");
+    valueKeyup = valueKeyup.replace(/^(\d\d)(\d)/g,"($1)$2"); 
+    valueKeyup = valueKeyup.replace(/(\d{4})(\d)/,"$1-$2");    
+    event.target.value = valueKeyup;
+})
+
+mobileNumber.addEventListener('keyup', (event) => {
+  let valueKeyup = event.target.value.replace(/\D/g,"");
+    valueKeyup = valueKeyup.replace(/^(\d\d)(\d)/g,"($1)$2"); 
+    valueKeyup = valueKeyup.replace(/(\d{5})(\d)/,"$1-$2");    
+    event.target.value = valueKeyup;
+})
