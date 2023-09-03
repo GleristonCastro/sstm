@@ -64,3 +64,21 @@ zipCode.addEventListener('input', () => {
     });
   };
 });
+
+cpf.addEventListener('input', () => {
+  const validCpf = cpf.value;
+  const isValidCpf = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
+  if(isValidCpf.test(validCpf) === true){
+    console.log('ok')
+  } else {
+    console.log('cpf inválido');
+  }
+})
+
+cpf.addEventListener('keyup', (event) => {
+  let valueKeyup = event.target.value.replace(/\D/g,"");
+  valueKeyup = valueKeyup.replace(/(\d{3})(\d)/,"$1.$2");
+  valueKeyup = valueKeyup.replace(/(\d{3})(\d)/,"$1.$2");
+  valueKeyup = valueKeyup.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+  event.target.value = valueKeyup;
+});
