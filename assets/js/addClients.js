@@ -49,13 +49,6 @@ btnSubmitForm.addEventListener('click', () => {
   console.table(data);
 });
 
-birthday.addEventListener('keyup', (event) => {
-  let valueKeyup = event.target.value.replace(/\D/g,"");
-  valueKeyup = valueKeyup.replace(/(\d{2})(\d)/,"$1/$2") 
-  valueKeyup = valueKeyup.replace(/(\d{2})(\d)/,"$1/$2") 
-  event.target.value = valueKeyup;
-})
-
 cpf.addEventListener('input', () => {
   const validCpf = cpf.value;
   const isValidCpf = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
@@ -74,6 +67,12 @@ cpf.addEventListener('keyup', (event) => {
   event.target.value = valueKeyup;
 });
 
+birthday.addEventListener('keyup', (event) => {
+  let valueKeyup = event.target.value.replace(/\D/g,"");
+  valueKeyup = valueKeyup.replace(/(\d{2})(\d)/,"$1/$2") 
+  valueKeyup = valueKeyup.replace(/(\d{2})(\d)/,"$1/$2") 
+  event.target.value = valueKeyup;
+})
 
 zipCode.addEventListener('input', () => {
   if(zipCode.value.length === 9){
