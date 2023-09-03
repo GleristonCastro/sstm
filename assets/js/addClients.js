@@ -56,22 +56,6 @@ birthday.addEventListener('keyup', (event) => {
   event.target.value = valueKeyup;
 })
 
-zipCode.addEventListener('input', () => {
-  if(zipCode.value.length === 8){
-    const apiViaCep = `https://viacep.com.br/ws/${zipCode.value}/json/`
-
-    fetch(apiViaCep).then(function(response){
-      response.json().then(function(data) {
-        address.value = data.logradouro;
-        neighborhood.value = data.bairro;
-        complement.value = data.complemento;
-        city.value = data.localidade;
-        state.value = data.uf;
-      });
-    });
-  };
-});
-
 cpf.addEventListener('input', () => {
   const validCpf = cpf.value;
   const isValidCpf = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
@@ -89,6 +73,30 @@ cpf.addEventListener('keyup', (event) => {
   valueKeyup = valueKeyup.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
   event.target.value = valueKeyup;
 });
+
+
+zipCode.addEventListener('input', () => {
+  if(zipCode.value.length === 9){
+    let zip = zipCode.value.replace("-", "")
+    const apiViaCep = `https://viacep.com.br/ws/${zip}/json/`
+
+    fetch(apiViaCep).then(function(response){
+      response.json().then(function(data) {
+        address.value = data.logradouro;
+        neighborhood.value = data.bairro;
+        complement.value = data.complemento;
+        city.value = data.localidade;
+        state.value = data.uf;
+      });
+    });
+  };
+});
+
+zipCode.addEventListener('keyup', (event) => {
+  let valueKeyup = event.target.value.replace(/\D/g,"")                
+  valueKeyup = valueKeyup.replace(/^(\d{5})(\d)/,"$1-$2") 
+  event.target.value = valueKeyup;
+})
 
 phoneNumber.addEventListener('keyup', (event) => {
   let valueKeyup = event.target.value.replace(/\D/g,"");
