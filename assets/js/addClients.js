@@ -51,7 +51,16 @@ btnSubmitForm.addEventListener('click', () => {
 
 zipCode.addEventListener('input', () => {
   if(zipCode.value.length === 8){
-    fetch
-    console.log('existe 8 número')
-  }
-})
+    const apiViaCep = `https://viacep.com.br/ws/${zipCode.value}/json/`
+
+    fetch(apiViaCep).then(function(response){
+      response.json().then(function(data) {
+        address.value = data.logradouro;
+        neighborhood.value = data.bairro;
+        complement.value = data.complemento;
+        city.value = data.localidade;
+        state.value = data.uf;
+      });
+    });
+  };
+});
