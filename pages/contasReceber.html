@@ -21,40 +21,152 @@
   </script>
   <header id="header" class="header"></header>
   <div class="is-container-xl mt150">
-    <h2>Contas a Receber</h2>
+    <h2>Contas</h2>
+    <div class="tabs">
 
-    <div class="card">
-      <div class="row">
-        <div class="is-col-3 form-control">
-          <label for="descriptionToReceive">Descrição:</label>
-          <input type="text" id="descriptionToReceive">
+      <ul>
+        <li>Fluxo de Caixa</li>
+        <li>A pagar</li>
+        <li>A receber</li>
+        <li>Configurações</li>
+      </ul>
+
+      <div class="card">
+        <div class="card__title" id="pay">A pagar</div>
+        <div class="row">
+          <div class="is-col-3 form-control">
+            <label for="descriptionToPay">Descrição:</label>
+            <input type="text" id="descriptionToPay">
+          </div>
+          <div class="is-col-3 form-control">
+            <label for="PayDate">Data:</label>
+            <input type="text" id="PayDate">
+          </div>
+          <div class="is-col-3 form-control">
+            <label for="amountPay">Valor:</label>
+            <input type="text" id="amountPay">
+          </div>
+          <div class="is-col-3 form-control">
+            <label for="payMeansOfPayment">Meio de pagamento:</label>
+            <select id="payMeansOfPayment">
+              <option value="Em dinheiro">Em dinheiro</option>
+              <option value="PIX">PIX</option>
+              <option value="Depósito">Depósito</option>
+              <option value="Tranferência">Tranferência</option>
+              <option value="Boleto Registrado">Boleto Registrado</option>
+              <option value="Cartão de crédito">Cartão de crédito</option>
+              <option value="Cartão de débito">Cartão de débito</option>
+            </select>
+          </div>
+          <div class="is-col-12 form-control">
+            <label for="remarkToPay">Observação:</label>
+            <textarea id="remarkToPay"></textarea>
+          </div>
         </div>
-        <div class="is-col-3 form-control">
-          <label for="receivableDate">Data:</label>
-          <input type="text" id="receivableDate">
-        </div>
-        <div class="is-col-3 form-control">
-          <label for="amountReceivable">Valor:</label>
-          <input type="text" id="amountReceivable">
-        </div>
-        <div class="is-col-3 form-control">
-          <label for="meansOfPayment">Meio de pagamento:</label>
-          <select id="meansOfPayment">
-            <option value="Em dinheiro">Em dinheiro</option>
-            <option value="PIX">PIX</option>
-            <option value="Depósito">Depósito</option>
-            <option value="Tranferência">Tranferência</option>
-            <option value="Boleto Registrado">Boleto Registrado</option>
-            <option value="Cartão de crédito">Cartão de crédito</option>
-            <option value="Cartão de débito">Cartão de débito</option>
-          </select>
-        </div>
-        <div class="is-col-12 form-control">
-          <label for="remarkToReceive">Observação:</label>
-          <textarea id="remarkToReceive"></textarea>
+        <div class="row is-flex-center-center">
+          <input type="button" value="Adicionar" class="is-btn-primary" id="btnSubmitFormPay">
         </div>
       </div>
+
+      <div class="card">
+        <div class="card__title" id="receive">A Receber</div>
+        <div class="row">
+          <div class="is-col-3 form-control">
+            <label for="descriptionToReceive">Descrição:</label>
+            <input type="text" id="descriptionToReceive">
+          </div>
+          <div class="is-col-3 form-control">
+            <label for="receivableDate">Data:</label>
+            <input type="text" id="receivableDate">
+          </div>
+          <div class="is-col-3 form-control">
+            <label for="amountReceivable">Valor:</label>
+            <input type="text" id="amountReceivable">
+          </div>
+          <div class="is-col-3 form-control">
+            <label for="meansOfPaymentReceive">Meio de pagamento:</label>
+            <select id="meansOfPaymentReceive">
+              <option value="Em dinheiro">Em dinheiro</option>
+              <option value="PIX">PIX</option>
+              <option value="Depósito">Depósito</option>
+              <option value="Tranferência">Tranferência</option>
+              <option value="Boleto Registrado">Boleto Registrado</option>
+              <option value="Cartão de crédito">Cartão de crédito</option>
+              <option value="Cartão de débito">Cartão de débito</option>
+            </select>
+          </div>
+          <div class="is-col-12 form-control">
+            <label for="remarkToReceive">Observação:</label>
+            <textarea id="remarkToReceive"></textarea>
+          </div>
+        </div>
+        <div class="row is-flex-center-center">
+          <input type="button" value="Adicionar" class="is-btn-primary" id="btnSubmitFormReceive">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__title" id="flow">Fluxo de Caixa Realizado</div>
+        <div class="row">
+          <div class="is-col-3"></div>
+          <div class="is-col-9"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__title" id="config">Configurações</div>
+        <div class="row">
+          <div class="is-col-4 form-control">
+            <label for="toPayConfig">Contas a pagar:</label>
+            <input type="text" id="toPayConfig">
+            <span class="btnAdd"><i class='bx bx-plus'></i></span>
+            <ul class="configList" id="toPayList">
+              <li>13º Salário <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Água <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Aluguel <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Aplicações Financeiras <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Contabilidade <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Empréstimo <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Energia elétrica <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Férias <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>FGTS <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Fornecedor Ferramentas <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+            </ul>
+          </div>
+          <div class="is-col-4 form-control">
+            <label for="toReceiveConfig">Contas a receber:</label>
+            <input type="text" id="toReceiveConfig">
+            <span class="btnAdd"><i class='bx bx-plus'></i></span>
+            <ul class="configList" id="toReceiveList">
+              <li>Produto A <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Produto B <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Serviço A <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Serviço B <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Emrpéstimo <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Outras receitas <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+            </ul>
+          </div>
+          <div class="is-col-4 form-control">
+            <label for="paymentMethodsConfig">Meios de Receb/Pgto:</label>
+            <input type="text" id="paymentMethodsConfig">
+            <span class="btnAdd"><i class='bx bx-plus'></i></span>
+            <ul class="configList" id="payMethodList">
+              <li>Em dinheiro <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>PIX <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Depósito <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Tranferência <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Boleto Registrado <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Cartão de crédito <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+              <li>Cartão de débito <span class="btnRemove"><i class='bx bx-minus'></i></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
+    
+
+
   </div>
   <script src="/assets/js/contasReceber.js"></script>
   <footer id="footer" class="footer"></footer>
