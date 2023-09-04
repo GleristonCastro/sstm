@@ -79,12 +79,21 @@ textarea {
 }
 
 .is-flex-center-center {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.is-flex-column-evenly {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 5px;
+}
+
 .mt150 {
-  margin-top: 150px;
+  margin-top: 9.37rem;
+  margin-bottom: 3.12rem;
 }
 
 .btnAdd, .btnRemove {
@@ -115,4 +124,12 @@ textarea {
 
 .configList li:nth-child(even){
   background: var(--first-color-lighten);
+}
+
+.is-to-display {
+  display: initial;
+}
+
+.is-to-hide {
+  display: none;
 }
