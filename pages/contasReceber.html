@@ -24,23 +24,185 @@
     <h2>Contas</h2>
     <div class="tabs">
 
-      <ul>
-        <li>Fluxo de Caixa</li>
-        <li>A pagar</li>
-        <li>A receber</li>
-        <li>Configurações</li>
+      <ul class="tabs__items">
+        <li class="tabs__item tabs__active" data-tab="toFlow">Fluxo de Caixa</li>
+        <li class="tabs__item" data-tab="toPay">A pagar</li>
+        <li class="tabs__item" data-tab="toReceive">A receber</li>
+        <li class="tabs__item" data-tab="toConfig">Configurações</li>
       </ul>
 
-      <div class="card">
-        <div class="card__title" id="pay">A pagar</div>
+      <div class="card is-to-hide" id="toFlow">
+        <div class="card__title" id="flow">Fluxo de Caixa Realizado</div>
+        <div class="row">
+          <div class="flowData">
+            <div class="flowData__column">
+              <div class="flowData__title">Fluxo de Caixa Realizado</div>
+              <div class="flowData__subtitle">Saldo Inicial</div>
+              <div class="flowData__subtitle">Receitas (Recebidos)</div>
+              <div class="flowData__subtitle">Despesas (Pagas)</div>
+              <div class="flowData__subtitle">Lucro / Prejuizo</div>
+              <div class="flowData__subtitle">Saldo Acumulado (Final)</div>
+              <div class="flowData__subtitle">Lucratividade</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Jan</div>
+              <div class="flowData__values">15.000</div>
+              <div class="flowData__values">27.000</div>
+              <div class="flowData__values">20.820</div>
+              <div class="flowData__values">6.180</div>
+              <div class="flowData__values">21.180</div>
+              <div class="flowData__values">23%</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Fev</div>
+              <div class="flowData__values">21.180</div>
+              <div class="flowData__values">28.000</div>
+              <div class="flowData__values">22.910</div>
+              <div class="flowData__values">5.090</div>
+              <div class="flowData__values">26.270</div>
+              <div class="flowData__values">18%</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Mar</div>
+              <div class="flowData__values">26.270</div>
+              <div class="flowData__values">28.500</div>
+              <div class="flowData__values">25.435</div>
+              <div class="flowData__values">3.065</div>
+              <div class="flowData__values">29.335</div>
+              <div class="flowData__values">11%</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Abr</div>
+              <div class="flowData__values">29.335</div>
+              <div class="flowData__values">20.500</div>
+              <div class="flowData__values">20.325</div>
+              <div class="flowData__values">175</div>
+              <div class="flowData__values">29.510</div>
+              <div class="flowData__values">1%</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Mai</div>
+              <div class="flowData__values">29.510</div>
+              <div class="flowData__values">10.500</div>
+              <div class="flowData__values">16.990</div>
+              <div class="flowData__values">-6.490</div>
+              <div class="flowData__values">23.020</div>
+              <div class="flowData__values">-62%</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Jun</div>
+              <div class="flowData__values">23.020</div>
+              <div class="flowData__values">12.500</div>
+              <div class="flowData__values">16.410</div>
+              <div class="flowData__values">-3.910</div>
+              <div class="flowData__values">19.110</div>
+              <div class="flowData__values">31%</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Jul</div>
+              <div class="flowData__values">19.110</div>
+              <div class="flowData__values">11.000</div>
+              <div class="flowData__values">16.910</div>
+              <div class="flowData__values">-5.910</div>
+              <div class="flowData__values">13.200</div>
+              <div class="flowData__values">-54%</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Ago</div>
+              <div class="flowData__values">13.200</div>
+              <div class="flowData__values">17.500</div>
+              <div class="flowData__values">22.580</div>
+              <div class="flowData__values">-5.080</div>
+              <div class="flowData__values">8.120</div>
+              <div class="flowData__values">-29%</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Set</div>
+              <div class="flowData__values">8.120</div>
+              <div class="flowData__values">20.000</div>
+              <div class="flowData__values">18.315</div>
+              <div class="flowData__values">1.685</div>
+              <div class="flowData__values">9.805</div>
+              <div class="flowData__values">8%</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Out</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Nov</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">Dez</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+              <div class="flowData__values">0</div>
+            </div>
+
+            <div class="flowData__column">
+              <div class="flowData__title">ANO</div>
+              <div class="flowData__values">15.000</div>
+              <div class="flowData__values">214.500</div>
+              <div class="flowData__values">207.220</div>
+              <div class="flowData__values">7.280</div>
+              <div class="flowData__values">22.280</div>
+              <div class="flowData__values">3%</div>
+            </div>
+
+          </div>
+          <div class="flowChart">
+            <div class="flowChart__accumulated is-flex-column-evenly">
+              <div>
+                <div class="flowChart__title">Recebido Acumulado:</div>
+                <div class="flowChart__result">R$ 214.500,00</div>
+              </div>
+              
+              <div>
+                <div class="flowChart__title">Pago Acumulado:</div>
+                <div class="flowChart__result">R$ 207.220,00</div>
+              </div>
+            </div>
+            <div class="flowChart__chart" id="accumulatedChart"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card is-to-display" id="toPay">
+        <div class="card__title">A pagar</div>
         <div class="row">
           <div class="is-col-3 form-control">
             <label for="descriptionToPay">Descrição:</label>
             <input type="text" id="descriptionToPay">
           </div>
           <div class="is-col-3 form-control">
-            <label for="PayDate">Data:</label>
-            <input type="text" id="PayDate">
+            <label for="payDate">Data:</label>
+            <input type="text" id="payDate">
           </div>
           <div class="is-col-3 form-control">
             <label for="amountPay">Valor:</label>
@@ -49,13 +211,6 @@
           <div class="is-col-3 form-control">
             <label for="payMeansOfPayment">Meio de pagamento:</label>
             <select id="payMeansOfPayment">
-              <option value="Em dinheiro">Em dinheiro</option>
-              <option value="PIX">PIX</option>
-              <option value="Depósito">Depósito</option>
-              <option value="Tranferência">Tranferência</option>
-              <option value="Boleto Registrado">Boleto Registrado</option>
-              <option value="Cartão de crédito">Cartão de crédito</option>
-              <option value="Cartão de débito">Cartão de débito</option>
             </select>
           </div>
           <div class="is-col-12 form-control">
@@ -68,8 +223,8 @@
         </div>
       </div>
 
-      <div class="card">
-        <div class="card__title" id="receive">A Receber</div>
+      <div class="card is-to-hide" id="toReceive">
+        <div class="card__title">A Receber</div>
         <div class="row">
           <div class="is-col-3 form-control">
             <label for="descriptionToReceive">Descrição:</label>
@@ -86,13 +241,6 @@
           <div class="is-col-3 form-control">
             <label for="meansOfPaymentReceive">Meio de pagamento:</label>
             <select id="meansOfPaymentReceive">
-              <option value="Em dinheiro">Em dinheiro</option>
-              <option value="PIX">PIX</option>
-              <option value="Depósito">Depósito</option>
-              <option value="Tranferência">Tranferência</option>
-              <option value="Boleto Registrado">Boleto Registrado</option>
-              <option value="Cartão de crédito">Cartão de crédito</option>
-              <option value="Cartão de débito">Cartão de débito</option>
             </select>
           </div>
           <div class="is-col-12 form-control">
@@ -105,16 +253,8 @@
         </div>
       </div>
 
-      <div class="card">
-        <div class="card__title" id="flow">Fluxo de Caixa Realizado</div>
-        <div class="row">
-          <div class="is-col-3"></div>
-          <div class="is-col-9"></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__title" id="config">Configurações</div>
+      <div class="card is-to-hide" id="toConfig">
+        <div class="card__title">Configurações</div>
         <div class="row">
           <div class="is-col-4 form-control">
             <label for="toPayConfig">Contas a pagar:</label>
@@ -168,7 +308,7 @@
 
 
   </div>
-  <script src="/assets/js/contasReceber.js"></script>
+  <script src="/assets/js/contasReceber.js" type="module"></script>
   <footer id="footer" class="footer"></footer>
   <script>
     // Use o Fetch para buscar o conteúdo da página externa
