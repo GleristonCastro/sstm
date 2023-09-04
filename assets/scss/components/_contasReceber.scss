@@ -1,0 +1,74 @@
+.flowData {
+  display: grid;
+  grid-template-columns: max-content 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 2px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . . . . . . . . . . .";
+  width: 100%;
+  border: 1px solid var(--first-color-dark);
+
+    &__title, &__subtitle, &__values {
+      text-align: center;
+      padding: 5px;
+      font-size: 0.95rem;
+    }
+
+    &__title {
+      background-color: var(--first-color-dark);
+      color: var(--first-color-lighten);
+      font-weight: 600;
+    }
+
+    &__subtitle {
+      text-align: initial;
+      font-weight: 600;
+    }
+}
+
+.flowChart {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 2px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ";
+  width: 100%;
+  margin-top: 50px;
+  border: 1px solid var(--first-color-dark);
+  
+  &__title {
+    background-color: var(--first-color-dark);
+    color: var(--first-color-lighten);
+    font-weight: 600;
+    padding: 0 10px;
+  }
+  
+  &__result {
+    border: 1px solid;
+    margin-bottom: 20px;
+    text-align: right;
+    padding: 0 10px;
+  }
+}
+
+.tabs {
+  &__items {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  &__active {
+    background: var(--first-color-lighten);
+    font-weight: 600;
+    border-radius: 5px;
+  }
+}
