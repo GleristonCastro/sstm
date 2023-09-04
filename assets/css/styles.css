@@ -206,12 +206,21 @@ textarea {
 }
 
 .is-flex-center-center {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.is-flex-column-evenly {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 5px;
+}
+
 .mt150 {
-  margin-top: 150px;
+  margin-top: 9.37rem;
+  margin-bottom: 3.12rem;
 }
 
 .btnAdd, .btnRemove {
@@ -242,6 +251,14 @@ textarea {
 
 .configList li:nth-child(even) {
   background: var(--first-color-lighten);
+}
+
+.is-to-display {
+  display: initial;
+}
+
+.is-to-hide {
+  display: none;
 }
 
 .header {
@@ -512,6 +529,70 @@ textarea {
 
 .none {
   display: none;
+}
+
+.flowData {
+  display: grid;
+  grid-template-columns: max-content 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 2px;
+  grid-auto-flow: row;
+  grid-template-areas: ". . . . . . . . . . . . . .";
+  width: 100%;
+  border: 1px solid var(--first-color-dark);
+}
+.flowData__title, .flowData__subtitle, .flowData__values {
+  text-align: center;
+  padding: 5px;
+  font-size: 0.95rem;
+}
+.flowData__title {
+  background-color: var(--first-color-dark);
+  color: var(--first-color-lighten);
+  font-weight: 600;
+}
+.flowData__subtitle {
+  text-align: initial;
+  font-weight: 600;
+}
+
+.flowChart {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 2px;
+  grid-auto-flow: row;
+  grid-template-areas: ". . ";
+  width: 100%;
+  margin-top: 50px;
+  border: 1px solid var(--first-color-dark);
+}
+.flowChart__title {
+  background-color: var(--first-color-dark);
+  color: var(--first-color-lighten);
+  font-weight: 600;
+  padding: 0 10px;
+}
+.flowChart__result {
+  border: 1px solid;
+  margin-bottom: 20px;
+  text-align: right;
+  padding: 0 10px;
+}
+
+.tabs__items {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 30px;
+}
+.tabs__item {
+  padding: 20px;
+  cursor: pointer;
+}
+.tabs__active {
+  background: var(--first-color-lighten);
+  font-weight: 600;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 340px) {
