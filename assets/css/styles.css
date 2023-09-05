@@ -176,7 +176,7 @@ label {
   width: 100%;
 }
 
-input[type=text], input[type=email], input[type=password], textarea, select {
+input[type=text], input[type=email], input[type=password], input[type=date], textarea, select {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -192,6 +192,7 @@ input[type=submit], input[type=button] {
   outline: none;
   border: 1px solid var(--first-color-light);
   font-size: 1rem;
+  cursor: pointer;
 }
 
 textarea {
@@ -259,6 +260,16 @@ textarea {
 
 .is-to-hide {
   display: none;
+}
+
+.is-success {
+  background: #a8f0c6;
+  color: #168544;
+}
+
+.is-error {
+  background: #f0a8a8;
+  color: #851616;
 }
 
 .header {
@@ -593,6 +604,15 @@ textarea {
   background: var(--first-color-lighten);
   font-weight: 600;
   border-radius: 5px;
+}
+
+#alertMessages {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 @media screen and (max-width: 340px) {
