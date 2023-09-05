@@ -10,11 +10,9 @@
 
 <body>
   <script>
-    // Use o Fetch para buscar o conteúdo da página externa
     fetch('./header.html')
       .then(response => response.text())
       .then(data => {
-        // Insira o conteúdo na página principal
         document.getElementById('header').innerHTML += data;
       })
       .catch(error => console.error(error));
@@ -202,7 +200,7 @@
           </div>
           <div class="is-col-3 form-control">
             <label for="payDate">Data:</label>
-            <input type="text" id="payDate">
+            <input type="date" id="payDate">
           </div>
           <div class="is-col-3 form-control">
             <label for="amountPay">Valor:</label>
@@ -211,6 +209,7 @@
           <div class="is-col-3 form-control">
             <label for="payMeansOfPayment">Meio de pagamento:</label>
             <select id="payMeansOfPayment">
+              <option value="">Selecione</option>
             </select>
           </div>
           <div class="is-col-12 form-control">
@@ -241,6 +240,7 @@
           <div class="is-col-3 form-control">
             <label for="meansOfPaymentReceive">Meio de pagamento:</label>
             <select id="meansOfPaymentReceive">
+              <option value="">Selecione</option>
             </select>
           </div>
           <div class="is-col-12 form-control">
@@ -249,7 +249,7 @@
           </div>
         </div>
         <div class="row is-flex-center-center">
-          <input type="button" value="Adicionar" class="is-btn-primary" id="btnSubmitFormReceive">
+          <input type="button" value="Adicionar" class="is-btn-primary" id="btnSubmitFormReceive" class="is-to-hide">
         </div>
       </div>
 
@@ -304,18 +304,16 @@
       </div>
 
     </div>
-    
-
 
   </div>
+  
+  <div id="alertMessages" class="is-to-hide"></div>
   <script src="/assets/js/contasReceber.js" type="module"></script>
   <footer id="footer" class="footer"></footer>
   <script>
-    // Use o Fetch para buscar o conteúdo da página externa
     fetch('./footer.html')
       .then(response => response.text())
       .then(data => {
-        // Insira o conteúdo na página principal
         document.getElementById('footer').innerHTML += data;
       })
       .catch(error => console.error(error));
