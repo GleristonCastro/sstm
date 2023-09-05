@@ -72,3 +72,12 @@
     border-radius: 5px;
   }
 }
+
+#alertMessages {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
