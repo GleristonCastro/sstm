@@ -1,0 +1,105 @@
+{
+  "pay": [
+    {
+      "descriptionToPay": "asdasd",
+      "payDateYear": 1984,
+      "payDateMonth": 7,
+      "payDateDay": 14,
+      "amountPay": 9684.84,
+      "payMeansOfPayment": "2",
+      "remarkToPay": "",
+      "id": 1
+    },
+    {
+      "descriptionToPay": "asdasd",
+      "payDateYear": 1984,
+      "payDateMonth": 7,
+      "payDateDay": 14,
+      "amountPay": 6515.61,
+      "payMeansOfPayment": "6",
+      "remarkToPay": "",
+      "id": 2
+    },
+    {
+      "descriptionToPay": "asdasd",
+      "payDateYear": 2024,
+      "payDateMonth": 7,
+      "payDateDay": 14,
+      "amountPay": 111.98,
+      "payMeansOfPayment": "6",
+      "remarkToPay": "",
+      "id": 3
+    },
+    {
+      "descriptionToPay": "asdasd",
+      "payDateYear": 2024,
+      "payDateMonth": 7,
+      "payDateDay": 14,
+      "amountPay": 111.98,
+      "payMeansOfPayment": "6",
+      "remarkToPay": "",
+      "id": 4
+    },
+    {
+      "descriptionToPay": "adsdasd",
+      "payDateYear": 2024,
+      "payDateMonth": 7,
+      "payDateDay": 14,
+      "amountPay": 518.81,
+      "payMeansOfPayment": "3",
+      "remarkToPay": "asdasd",
+      "id": 5
+    },
+    {
+      "descriptionToPay": "asdasd",
+      "payDateYear": 1984,
+      "payDateMonth": 7,
+      "payDateDay": 14,
+      "amountPay": 1849.84,
+      "payMeansOfPayment": "6",
+      "remarkToPay": "asdasd",
+      "id": 6
+    },
+    {
+      "descriptionToPay": "asdasda",
+      "payDateYear": 1984,
+      "payDateMonth": 7,
+      "payDateDay": 14,
+      "amountPay": 515151.51,
+      "payMeansOfPayment": "7",
+      "remarkToPay": "asda",
+      "id": 7
+    }
+  ],
+  "receive": [],
+  "means": [
+    {
+      "id": 1,
+      "meansName": "Em dinheiro"
+    },
+    {
+      "id": 2,
+      "meansName": "PIX"
+    },
+    {
+      "id": 3,
+      "meansName": "Depósito"
+    },
+    {
+      "id": 4,
+      "meansName": "Tranferência"
+    },
+    {
+      "id": 5,
+      "meansName": "Boleto Registrado"
+    },
+    {
+      "id": 6,
+      "meansName": "Cartão de crédito"
+    },
+    {
+      "id": 7,
+      "meansName": "Cartão de débito"
+    }
+  ]
+}
