@@ -25,13 +25,6 @@ const payMeansOfPayment = document.getElementById('payMeansOfPayment');
 const remarkToPay = document.getElementById('remarkToPay');
 const btnSubmitFormPay = document.getElementById('btnSubmitFormPay');
 
-const descriptionToReceive = document.getElementById('descriptionToReceive');
-const receivableDate = document.getElementById('receivableDate');
-const amountReceivable = document.getElementById('amountReceivable');
-const meansOfPaymentReceive = document.getElementById('meansOfPaymentReceive');
-const remarkToReceive = document.getElementById('remarkToReceive');
-const btnSubmitFormReceive = document.getElementById('btnSubmitFormReceive');
-
 function populateMeansOfPaymentSelect(run) {
   fetch('http://localhost:3000/means')
     .then(response => response.json())
@@ -51,13 +44,6 @@ function populateMeansOfPaymentSelect(run) {
 window.addEventListener('load', populateMeansOfPaymentSelect(payMeansOfPayment));
 window.addEventListener('load', populateMeansOfPaymentSelect(meansOfPaymentReceive));
 
-payDate.addEventListener('keyup', (event) => {
-  let valueKeyup = event.target.value.replace(/\D/g,"");
-  valueKeyup = valueKeyup.replace(/(\d{2})(\d)/,"$1/$2") 
-  valueKeyup = valueKeyup.replace(/(\d{2})(\d)/,"$1/$2") 
-  event.target.value = valueKeyup;
-});
-
 amountPay.addEventListener('keyup', (event) => {
   let valueKeyup = event.target.value.replace(/\D/g,"");
   valueKeyup = (valueKeyup/100).toFixed(2) + "";
@@ -65,32 +51,69 @@ amountPay.addEventListener('keyup', (event) => {
   valueKeyup = valueKeyup.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
   valueKeyup = valueKeyup.replace(/(\d)(\d{3}),/g, "$1.$2,");
   event.target.value = valueKeyup;
-})
+});
 
 btnSubmitFormPay.addEventListener('click', () => {
-  let countToPay = 0;
-  let id = countToPay++
+  if(descriptionToPay.value !== '' && payDate.value !== '' && amountPay.value !== '' && payMeansOfPayment.value !== ''){
+    const fullDate = payDate.value;
 
-  const formData = {
-    pay: {
-    id: id,
-    descriptionToPay: descriptionToPay.value,
-    payDate: payDate.value,
-    amountPay: amountPay.value,
-    payMeansOfPayment: payMeansOfPayment.value,
-    remarkToPay: remarkToPay.value
-    },
-  };
-
-  fetch('http://localhost:3000/salvar-dados', {
+    const formData = {
+      descriptionToPay: descriptionToPay.value,
+      payDateYear: parseInt(fullDate.slice(0,4)),
+      payDateMonth: parseInt(fullDate.slice(5,7)),
+      payDateDay: parseInt(fullDate.slice(8,10)),
+      amountPay: parseFloat(amountPay.value.replace(/\./g, '').replace(/,/g, '.')),
+      payMeansOfPayment: payMeansOfPayment.value,
+      remarkToPay: remarkToPay.value
+    };
+    fetch('http://localhost:3000/pay', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(formData),
   })
-    .then((response) => response.text())
-    .then((message) => {
-      console.log(message);
+    .then((response) => {
+      const status = response.status;
+      return response.text().then((message) => {
+        return { status, message };
+      });
+    })
+    .then((data) => {
+      showAlert(data.status, 'Adicionado com sucesso');
     });
+  } else {
+    showAlert(453,'Todos os campos obrigatórios devem ser preenchidos')
+  }
+
 });
+
+function showAlert (status,message){
+  const alertMessages = document.getElementById('alertMessages');
+
+  if(status == 201) {
+    alertMessages.innerText = message;
+    alertMessages.classList.remove('is-to-hide');
+    alertMessages.classList.add('is-to-display','is-success');
+    setTimeout(function(){
+      alertMessages.classList.remove('is-to-display','is-success');
+      alertMessages.classList.add('is-to-hide');
+    }, 5000)
+  }
+  if(status == 453){
+    alertMessages.innerText = message;
+    alertMessages.classList.remove('is-to-hide');
+    alertMessages.classList.add('is-to-display','is-error');
+    setTimeout(function(){
+      alertMessages.classList.remove('is-to-display','is-error');
+      alertMessages.classList.add('is-to-hide');
+    }, 5000)
+  }
+}
+
+const descriptionToReceive = document.getElementById('descriptionToReceive');
+const receivableDate = document.getElementById('receivableDate');
+const amountReceivable = document.getElementById('amountReceivable');
+const meansOfPaymentReceive = document.getElementById('meansOfPaymentReceive');
+const remarkToReceive = document.getElementById('remarkToReceive');
+const btnSubmitFormReceive = document.getElementById('btnSubmitFormReceive');
